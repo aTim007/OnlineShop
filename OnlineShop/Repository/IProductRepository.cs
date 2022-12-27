@@ -1,9 +1,10 @@
 ﻿using OnlineShop.Models;
+using Redis.OM.Searching;
 
 namespace OnlineShop.Repository
 {
     public interface IProductRepository : IBaseRepository<Product>
     {
-        Task<Product?> GetItemByName(string name);
+        Task<IList<Product>> GetAllItem();
     }
 }

@@ -3,7 +3,6 @@ using OnlineShop.Models;
 
 namespace OnlineShop.Data
 {
-
     public class ProductContext : DbContext
     {
         public ProductContext(DbContextOptions<ProductContext> options) : base(options) { }
@@ -13,11 +12,11 @@ namespace OnlineShop.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Product>(entity =>
             {
-                entity.HasKey(entity=> entity.ProductId);
+                entity.HasKey(entity => entity.ProductId);
                 entity.Property(entity => entity.ProductName);
                 entity.Property(entity => entity.ProductDescription);
                 entity.Property(entity => entity.ProductPrice);
-            }) ;
+            });
 
         }
     }

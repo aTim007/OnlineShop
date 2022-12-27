@@ -11,18 +11,15 @@ namespace OnlineShop.Repository
         {
             _dbProduct = context;
         }
-
         public async Task Add(Product item)
         {
             await _dbProduct.Products.AddAsync(item);
             await _dbProduct.SaveChangesAsync();
         }
-
-        public async Task<List<Product>> GetAllItem()
+        public async Task<IList<Product>> GetAllItem()
         {
             return await _dbProduct.Products.ToListAsync();
         }
-
         public async Task<Product?> GetItemByName(string key)
         {
             return await _dbProduct.Products.Where(x => x.ProductName == key).FirstOrDefaultAsync();

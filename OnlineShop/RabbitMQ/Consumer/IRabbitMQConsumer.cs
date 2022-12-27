@@ -1,4 +1,4 @@
-﻿namespace OnlineShop.RabbitMQ
+﻿namespace OnlineShop.RabbitMQ.Consumer
 {
     public interface IRabbitMQConsumer
     {

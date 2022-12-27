@@ -2,7 +2,7 @@
 {
     public interface IBaseRepository<T>
     {
-        Task<List<T>> GetAllItem();
+        Task<T?> GetItemByName(string name);
         Task Add(T item);
     }
 }
