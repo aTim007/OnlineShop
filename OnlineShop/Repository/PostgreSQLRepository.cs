@@ -14,7 +14,7 @@ namespace OnlineShop.Repository
         public async Task Add(Product item)
         {
             await _dbProduct.Products.AddAsync(item);
-            await _dbProduct.SaveChangesAsync();
+            //await _dbProduct.SaveChangesAsync();
         }
         public async Task<IList<Product>> GetAllItem()
         {
@@ -22,7 +22,7 @@ namespace OnlineShop.Repository
         }
         public async Task<Product?> GetItemByName(string key)
         {
-            return await _dbProduct.Products.Where(x => x.ProductName == key).FirstOrDefaultAsync();
+            return await _dbProduct.Products.Where(x => x.Name == key).FirstOrDefaultAsync();
         }
     }
 }

@@ -28,7 +28,7 @@ namespace OnlineShop.Repository
         }
         public async Task<Product?> GetItemByName(string key)
         {
-            return await _dbProduct.Where(x => x.ProductName == key).FirstOrDefaultAsync();
+            return await _dbProduct.Where(x => x.Name == key).FirstOrDefaultAsync();
         }
     }
 }

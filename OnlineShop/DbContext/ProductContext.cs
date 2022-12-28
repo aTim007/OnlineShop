@@ -12,10 +12,9 @@ namespace OnlineShop.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Product>(entity =>
             {
-                entity.HasKey(entity => entity.ProductId);
-                entity.Property(entity => entity.ProductName);
-                entity.Property(entity => entity.ProductDescription);
-                entity.Property(entity => entity.ProductPrice);
+                entity.HasKey(entity => entity.Id);
+                entity.Property(entity => entity.Name);
+                entity.Property(entity => entity.Price);
             });
 
         }
