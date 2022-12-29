@@ -1,4 +1,4 @@
-﻿namespace OnlineShop.RabbitMQ.Interfaces
+﻿namespace OnlineShop.RabbitMQ
 {
     public interface IRabbitMQProducer
     {

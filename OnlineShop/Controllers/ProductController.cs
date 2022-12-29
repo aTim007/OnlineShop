@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using OnlineShop.Data;
 using OnlineShop.Models;
-using OnlineShop.RabbitMQ.Interfaces;
-using OnlineShop.RabbitMQ.Producer;
+using OnlineShop.RabbitMQ;
 using OnlineShop.Repository;
 
 namespace OnlineShop.Controllers

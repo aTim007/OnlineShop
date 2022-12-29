@@ -14,7 +14,7 @@ namespace OnlineShop.Repository
         public async Task Add(Product item)
         {
             await _dbProduct.Products.AddAsync(item);
-            //await _dbProduct.SaveChangesAsync();
+            await _dbProduct.SaveChangesAsync();
         }
         public async Task<IList<Product>> GetAllItem()
         {

@@ -1,7 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
+using StackExchange.Redis;
 using OnlineShop.Data;
-using OnlineShop.RabbitMQ.Interfaces;
-using OnlineShop.RabbitMQ.Producer;
+using OnlineShop.RabbitMQ;
+using OnlineShop.Redis;
 using OnlineShop.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,14 +15,13 @@ builder.Services.AddDbContext<ProductContext>(options => options.UseNpgsql(confi
 builder.Services.AddScoped<IProductRepository, PostgreSQLRepository>();
 //builder.Services.AddScoped<IProductRepository, RedisRepository>();
 builder.Services.AddScoped<IRabbitMQProducer, RabbitMQProducer>();
+builder.Services.AddScoped<ICache, CacheManager>();
+
 builder.Services.AddControllers();
-
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
-
 app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+app.Run();;
